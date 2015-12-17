@@ -203,12 +203,6 @@ var toFileName = function (filePath){
 
 gulp.task('readme', function() {
   betterConsole.clear()
-  console.log("Part of:");
-  console.log("___  ____ ____  _ ____ ____ ___    ____ ____ _  _ ___  ____ ____ ___");
-  console.log("|__] |__/ |  |  | |___ |     |     |    |  | |\\/| |__] |  | |__/  | ");
-  console.log("|    |  \\ |__| _| |___ |___  |     |___ |__| |  | |    |__| |  \\  | ");
-  console.log();
-  console.log();
   console.log("From:")
   console.log("____ ____ ___  ____    ____ ____ ____    ____ _  _ ____ ____ _ ____ ____")
   console.log("|    |  | |  \\ |___    |___ |  | |__/    |__| |\\/| |___ |__/ | |    |__|")
@@ -218,16 +212,12 @@ gulp.task('readme', function() {
   console.log("                       /  ::::=======   /   \\                           ".blue);
   console.log("                       \\  ===========  /    /                           ".blue);
   console.log("                        \\ =========== /    /                            ".blue);
-  console.log();;
-  console.log("And:");
-  console.log("___ ____ ____ _  _    _ _  _ ___  _   _");
-  console.log(" |  |___ |__| |\\/|    | |\\ | |  \\  \\_/");
-  console.log(" |  |___ |  | |  |    | | \\| |__/   |");
+  console.log();
   console.log();
   console.log("______________________________________________".red);
-  console.log(" _____   _____         _____ _______ _______".red);
-  console.log("|_____] |     | |        |   |       |______".red);
-  console.log("|       |_____| |_____ __|__ |_____  |______".red);
+  console.log(" _____   _____  _______ __   _".red);
+  console.log("|     | |_____] |______ | \\  |".red);
+  console.log("|_____| |       |______ |  \\_|".red);
   console.log(" _____   _____  _______ __   _".white);
   console.log("|     | |_____] |______ | \\  |".white);
   console.log("|_____| |       |______ |  \\_|".white);
@@ -241,13 +231,13 @@ gulp.task('readme', function() {
   console.log();
   console.log();
   console.log("WHAT:");
-  console.log("The Police Open Data Census is an attempt to catalog open police accountibilty,");
-  console.log("oversight and transparency datasets available to the public.");
+  console.log("The Open Open Data Census is an attempt to allow anyone to catalog");
+  console.log("any open data topic across governments.");
   console.log();
   console.log("HOW:");
   console.log("The Census is built on a Google Spreadsheet integration though tabletop.js.");
   console.log("Feedback and suggested additions to the current data are more than welcome");
-  console.log("at" + " indy@codeforamerica.org".red + " and/or our google form" + " bit.ly/1KMFbxZ".red)
+  console.log("at" + " indy@codeforamerica.org".red)
   console.log();
   console.log("The site is otherwise a fairly bogstandard bootstrap/jquery build. All that");
   console.log("should be required to get the development environment up is:");
