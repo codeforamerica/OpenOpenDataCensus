@@ -1,0 +1,67 @@
+.datapoles {
+    width: 65px;
+    margin: auto;
+    padding-left: 0;
+}
+
+.datapole {
+    display: inline-block;
+    width: 7px;
+    height: 20px;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+}
+
+#datasets > tr > th {
+    text-align: center;
+}
+
+.key {
+    display: inline-block;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.key h5 {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.key ul {
+    margin: 0;
+    display: inline-block;
+    padding-left: 10px;
+}
+
+.key ul li {
+    display: inline-block;
+    border-left: solid 16px #000;
+    line-height: 16px;
+    padding-left: 5px;
+    padding-right: 10px;
+}
+
+.key ul li.DNE {
+    border-left-color: silver;
+}
+
+.key ul li.Yes {
+    border-left-color: #8BDD3A;
+}
+
+.key ul li.No {
+    border-left-color: #DD3D3A;
+}
+
+.key ul li.Unsure {
+    border-left-color: #39BEFA  ;
+}
+
+.key img {
+    padding-bottom: 10px;
+}
+
+.cta-button {
+  font-size: 30px;
+}
