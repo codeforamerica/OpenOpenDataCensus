@@ -15,3 +15,5 @@ npm install
 npm install gulp -G
 gulp readme
 ```
+
+[A model Google Sheet is available](https://docs.google.com/spreadsheets/d/1OhVbryeHBsPjJ3TjjVFlfM552pDKRjiUpTAXQJe9miA/). Duplicate it into your own Google Docs account to serve as your data store.
