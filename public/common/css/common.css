@@ -52,15 +52,15 @@ p {
     background-color: silver;
 }
 
-.datapole.Yes {
-    background-color: #8BDD3A;
+.datapole.yes {
+    background-color: #98fb98;
 }
 
-.datapole.No {
-    background-color: #DD3D3A;
+.datapole.no {
+    background-color: #d33333;
 }
 
-.datapole.Unsure {
+.datapole.unsure {
     background-color: #39BEFA;
 }
 

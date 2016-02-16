@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Methodology: U.S. States Open Data Census</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+      var host = "census.usopendata.org";
+      if ((host == window.location.host) && (window.location.protocol != "https:"))
+      window.location.protocol = "https";
+    </script>
+  </head>
+
+  <body>
+    <!-- inject:nav:html -->
+    <!-- endinject -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1 main">
+          <h1>Census Methodology</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1 main">
+
+          <h2 id="selection-of-datasets">Selection of Datasets</h2>
+
+          <p><a href="https://github.com/sunlightpolicy/State-Open-Data-Census/issues/1#issuecomment-73299844">We used the G8 National Action Plan’s definition of “High-Value Datasets,”</a> recognizing that needs and opportunities are different at the state level than at the national level. We <a href="https://github.com/sunlightpolicy/State-Open-Data-Census/issues?q=is%3Aissue">created GitHub issues to select each representative dataset</a>, and in the ensuing discussion we selected the most appropriate state-level dataset to represent that class of data.</p>
+
+          <h2>Evaluation Criteria</h2>
+          <p>Each dataset is evaluated by 12 metrics. Each is worth 5 points, except for “Exists” (which is worth 0 points) “Free” (which is worth 15 points) and “Machine-readable” (which is worth 40 points). Machine readability is worth far more points because that is the essence of open data, and being without cost is worth somewhat more because of its corresponding importance (though not essential nature) to the free flow of data. There is a good argument to be made that open licensing is also quite valuable, but there is inadequate evidence that U.S. states claiming copyright on these datasets is a practical obstacle to openness to warrant equal scoring at this time—often, they seem to claim copyright accidentally, via boilerplate copyright statements on websites. All of these criteria add up to 100 points, upon which grading is based.</p>
+
+          <p>If no data is available, but only information (that is, as PDF, HTML, Word, etc.), that will be inventoried, but recorded as not being machine-readable. <em>However,</em> if any data is available, <em>that</em> will be inventoried. So if, for example, a legislature has a website with detailed PDFs about every bill and legislator, but only provides data as a single CSV file with vanishingly little information, the <em>CSV</em> will be inventoried, not the PDFs.</p>
+
+          <p>The grading scale is as follows:</p>
+
+          <div class="table-responsive">
+          <table class="table-condensed table-striped">
+            <thead>
+              <tr><th>Grade</th><th>Score</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>A+</td><td>97–100</td></tr>
+              <tr><td>A</td><td>93–96</td></tr>
+              <tr><td>A-</td><td>90–92</td></tr>
+              <tr><td>B+</td><td>87–89</td></tr>
+              <tr><td>B</td><td>83–86</td></tr>
+              <tr><td>B-</td><td>80–82</td></tr>
+              <tr><td>C+</td><td>77–79</td></tr>
+              <tr><td>C</td><td>73–76</td></tr>
+              <tr><td>C-</td><td>70–72</td></tr>
+              <tr><td>D+</td><td>67–69</td></tr>
+              <tr><td>D</td><td>63–66</td></tr>
+              <tr><td>D-</td><td>60–62</td></tr>
+              <tr><td>F</td><td>0–59</td></tr>
+            </tbody>
+          </table>
+          </div>
+
+          <h3>Data Exists</h3>
+          <p>Does this data exist <em>at all?</em></p>
+          
+          <h3>Digitized</h3>
+          <p>Does the data exist as electronic data, or is it only on paper?</p>
+          
+          <h3>Available Publically</h3>
+          <p>May the public have access to this data, or is it protected or confidential in some way?</p>
+          
+          <h3>Free (Without Cost)</h3>
+          <p>Does the state sell this data, or do they give it away without charge? <em>Any</em> charge, no matter how small, yields a rating of “no.” If <em>information</em> is provided freely on the website, but <em>data</em> is sold (e.g., business entity records can be browsed on the web, but bulk data must be purchased), then this will be given a rating of “no.”</p>
+          
+          <h3>Available Online</h3>
+          <p>Can it be downloaded over the internet, or must it be transported on removable storage media?</p>
+          
+          <h3>Machine-Readable</h3>
+          <p>Is this <em>data,</em> or is it mere <em>information?</em> For example, a PDF is not machine-readable data. On the other hand, CSV, JSON, SQLite, Excel, FoxPro, and SGML are all machine-readable data.</p>
+          
+          <h3>Available in Bulk</h3>
+          <p>Is all of the data that comprises this data available in downloadable files that can be retrieved automatically (e.g., <code>wget https://www.example.gov/addresses.csv</code>code>) at stable, predictable URLs? Or must a human click an “export” button, track down updated filenames, or interface with an API?</p>
+          
+          <h3>No Copyright Restrictions</h3>
+          <p>Does the state claim copyright over this data? A copyright statement generally in the footer of the dataset’s web page—absent a specific disclaimer of that copyright claim, that qualifies as a copyright restriction. On the other hand, if the agency’s website is silent about copyright, the dataset is assumed to be without copyright restrictions (as states’ data is generally in the public domain, silence indicates public domain status).</p>
+          
+          <h3>Up-to-Date</h3>
+          <p>Is this data updated frequently enough that its content doesn’t become stale? This period of time can vary enormously between types of data.</p>
+          
+          <h3>In the State Repository</h3>
+          <p>Is this dataset found in the state’s open data repository (e.g., <code>data.example.gov</code>)? If the state does not have a repository, this is an automatic ”no.”</p>
+          
+          <h3>Verifiable</h3>
+          <p>Is any mechanism provided to ensure that a downloaded copy of a dataset is unchanged from the master file provided by the state? This might mean providing a data authentication service like <a href="http://dataseal.org/">Data Seal</a>, or it might mean that the site is served up over HTTPS (preventing man-in-the-middle attacks).</p>
+
+          <h3>Complete</h3>
+          <p>Does this dataset provide the minimum amount of information necessary to be viably useful to third parties? <a href="#completeness-criteria">See below</a> for details as to what this means for each type of data.</p>
+
+          <h2 id="completeness-criteria">Evaluation Criteria for Completeness</h2>
+
+          <p>We <a href="https://github.com/sunlightpolicy/State-Open-Data-Census/issues?q=is%3Aissue">created GitHub issues to define each dataset</a>, where we researched existing standards and, when they didn’t exist, surveyed best practices, consulting with relevant experts when available. The goal was to set a baseline for the <em>minimum</em> data necessary for a dataset to be considered complete.</p>
+
+          <p>What follows are the evaluation criteria for each dataset.</p>
+
+          <h3 id="evaluation-corporations">Companies</h3>
+          <p><a href="https://github.com/sunlightpolicy/State-Open-Data-Census/issues/39">GitHub Discussion</a></p>
+
+          <ul>
+          <li>ID</li>
+          <li>name</li>
+          <li>address</li>
+          <li>registered agent</li>
+          <li>registered agent's address</li>
+          <li>date of incorporation</li>
+          <li>status</li>
+          <li>state formed</li>
+          <li>officers</li>
+          <li>shares (if applicable)</li>
+          </ul>
+
+          <p>Evaluation begins by looking at <a href="http://registries.opencorporates.com/jurisdiction/average_us">OpenCorporations’ scores for individual states</a>.</p>
+
+          <p>Search terms used to find this dataset include “[state] businesses,” “[state] corporations,” and “[state] corporate registry.”</p>
+
+          <h3 id="evaluation-incarceration">Incarceration</h3>
+          <p><a href="https://github.com/sunlightpolicy/State-Open-Data-Census/issues/38">GitHub Discussion</a></p>
+
+          <ul>
+          <li>number of inmates in each facility</li>
+          <li>at what percentage of capacity the facility is operating</li>
+          <li>numerical and percent change in population from same time period of previous year</li>
+          </ul>
+
+          <p>Search terms used to find this dataset include “[state] incarceration data,” “[state] prison data,” and “[state] prisoner statistics.”</p>
+
+          <h3 id="evaluation-real-estate">Real Estate</h3>
+          <p><a href="https://github.com/sunlightpolicy/State-Open-Data-Census/issues/37">GitHub Discussion</a></p>
+
+          <ul>
+          <li>agency</li>
+          <li>property name</li>
+          <li>location identifier (e.g., address, coordinates, or general geographic descriptor)</li>
+          <li>land acreage (if applicable)</li>
+          <li>use type</li>
+          </ul>
+
+          <p>Search terms used to find this dataset include “[state]-owned real estate,” [state]-owned property,” [state]-owned lands,” “[state]-owned buildings,” and “[state] government leases.”</p>
+
+          <h3 id="evaluation-checkbook">Checkbook</h3>
+          <p><a href="https://github.com/sunlightpolicy/State-Open-Data-Census/issues/36">GitHub Discussion</a></p>
+
+          <ul>
+          <li>agency</li>
+          <li>payee</li>
+          <li>amount</li>
+          <li>date</li>
+          <li>check/voucher number</li>
+          <li>description</li>
+          <li>expense category</li>
+          </ul>
+
+          <p>Evaluation begins by referring to the <a href="http://www.ncsl.org/research/telecommunications-and-information-technology/statewide-transparency-spending-websites-and-legis.aspx">National Conference of State Legislatures’ "Statewide Transparency and Spending Websites"</a> and to <a href="http://uspirg.org/sites/pirg/files/reports/Following%20the%20Money%202015%20vUS.pdf">U.S. PIRG’s “Follow the Money” report</a> (page 57), each of which are already comprehensive censuses of each state’s spending transparency websites.
+
+          <p>Search terms used to find this dataset include “[state] checkbook,” “[state] spending data,” and “[state] expenditures.”</p>
+
+          <h3 id="evaluation-address-points">Address Points</h3>
+          <p><a href="https://github.com/sunlightpolicy/State-Open-Data-Census/issues/35">GitHub Discussion</a></p>
+
+          <ul>
+          <li>address: numeric component</li>
+          <li>address: street name</li>
+          <li>coordinates</li>
+          </ul>
+
+          <p>Evaluation begins by checking <a href="https://github.com/openaddresses/openaddresses/tree/master/sources/us">OpenAddresses’ data sources</a>, to see if there is a state-level data source in their inventory. OpenAddresses is conducting an ongoing census of every source of address points in the United States.</p>
+
+          <p>Search terms used to find this dataset include “[state] address points” and “[state] address database.”</p>
+
+          <h3 id="evaluation-legislation">Legislation</h3>
+          <p><a href="https://github.com/sunlightpolicy/State-Open-Data-Census/issues/30">GitHub Discussion</a></p>
+
+          <ul>
+          <li>legislators
+            <ul>
+              <li>legislator name</li>
+              <li>chamber (if extant)</li>
+              <li>party</li>
+              <li>district identifier</li>
+              <li>date sworn in</li>
+            </ul>
+          </li>
+          <li>legislation
+            <ul>
+            <li>session</li>
+            <li>bill number</li>
+            <li>bill patron(s)</li>
+            <li>bill catch line (if extant)</li>
+            <li>bill summary (if extant)</li>
+            <li>bill text</li>
+            <li>bill status</li>
+            </ul>
+          </li>
+          </ul>
+
+          <p>Evaluation begins by referring to <a href="http://openstates.org/reportcard/">Open States’ “Open Legislation Data Report Card”</a>, which is a comprehensive census of state-level legislation data.</p>
+
+          <p>Search terms used to find this dataset are narrowed to the site in question (e.g., “site:legis.example.gov”), and include terms like “download,” “data,” and “filetype:csv.”</p>
+
+          <h3 id="evaluation-restaurant-inspections">Restaurant Inspections</h3>
+          <p><a href="https://github.com/sunlightpolicy/State-Open-Data-Census/issues/29">GitHub Discussion</a></p>
+
+          <ul>
+          <li>business ID</li>
+          <li>business name</li>
+          <li>business address</li>
+          <li>inspection date</li>
+          <li>inspection outcome (score, rating, action, etc.)</li>
+          </ul>
+
+          <p>Search terms used to find this dataset include “[state] restaurant inspections” and “[state] food safety.”</p>
+
+          <h3 id="evaluation-population">Population Projections</h3>
+          <p><a href="https://github.com/sunlightpolicy/State-Open-Data-Census/issues/28">GitHub Discussion</a></p>
+
+          <ul>
+          <li>locality name</li>
+          <li>locality FIPS code or GNIS ID</li>
+          <li>estimate as of date X</li>
+          </ul>
+
+          <a href="https://www.census.gov/population/projections/data/state/st-prod-proj-list.html">Evaluation begins by referring to the U.S. Census Bureau’s “State-Produced Population Projections,”</a> which links to the website of each state that produces projections.</p>
+
+          <p>The search term “[state] population projections” generally yields this dataset.</p>
+
+          <h3 id="evaluation-vehicle-crashes">Vehicle Crashes</h3>
+          <p><a href="https://github.com/sunlightpolicy/State-Open-Data-Census/issues/27">GitHub Discussion</a></p>
+
+          <p>This uses the <a href="http://www.mmucctraining.us/">Model Minimum Uniform Crash Criteria</a>, which is a fairly detailed standard. The basic elements are:</p>
+
+          <ul>
+          <li>crash information</li>
+          <li>vehicle information</li>
+          <li>driver information</li>
+          </ul>
+
+          <p>Evaluation includes looking at <a href="http://www.nhtsa.gov/Data/State+Data+Programs/SDS+Overview">the National Highway Traffic Safety Administration’s State Data System overview</a>, which lists all states that are sharing crash data with the federal data. Participating states can be known to have the data, whether or not they share it with the public.</p>
+
+          <p>Search terms used to find this dataset include “[state] crash data” and “[state] crash statistics.”</p>
+
+        </div>
+      </div>
+      <div class="row">
+         <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1 main">
+          <footer>
+            <p><small>Created by <a href="https://usopendata.org/">U.S. Open Data</a>. All data published under
+            <a href="https://creativecommons.org/publicdomain/zero/1.0/">the CC0 license</a>, all other
+            contents published under <a href="https://opensource.org/licenses/MIT">the MIT license</a>.
+            <a href="https://github.com/opendata/Open-Data-Census/">Pull requests cheerfully accepted on
+            GitHub</a>.</small></p>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script id="department-template" type="text/x-handlebars-template">
+      <li><a href="#" onClick="filterByState('{{State}}')">{{State}}</a></li>
+    </script>
+    <script id="datatype-template" type="text/x-handlebars-template">
+      <li><a href="#" onClick="filterByDatatype('{{[Type of Data]}}' )">{{[Type of Data]}}</a></li>
+    </script>
+
+    <!-- inject:templates:html -->
+    <!-- endinject -->
+    <script>
+      pageType = "Methodology";
+    </script>
+    <!-- inject:js -->
+    <!-- endinject -->
+  </body>
+
+</html>

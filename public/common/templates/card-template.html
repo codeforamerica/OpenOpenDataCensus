@@ -1,14 +1,34 @@
 <div class="panel panel-default">
-    <div class="panel-heading department-title-heading">
-        <h1 class="department-title">{{Department}}, {{State}} – {{"Type of Data"}}</h1>
+    <div class="panel-heading state-title-heading">
+        <h1 class="state-title">{{State}}: {{"Type of Data"}}</h1>
     </div>
     <div class="panel-body">
       <div class="data-icons">
         <p><b>Data Breakdown:</b></p>
             <ul class="availablilty icons">
+                <a data-toggle="tooltip" title data-original-title="{{existsCaption}}">
+                    <li>
+                        <i class="fa fa-cube datapole {{exists}}"></i>
+                    </li>
+                </a>
+                <a data-toggle="tooltip" title data-original-title="{{digitizedCaption}}">
+                    <li>
+                        <i class="fa fa-desktop datapole {{digitized}}"></i>
+                    </li>
+                </a>
+                <a data-toggle="tooltip" title data-original-title="{{isPublicCaption}}">
+                    <li>
+                        <i class="fa fa-users datapole {{isPublic}}"></i>
+                    </li>
+                </a>
                 <a data-toggle="tooltip" title data-original-title="{{freeCaption}}">
                     <li>
-                        <i class="fa fa-eye datapole {{free}}"></i>
+                        <i class="fa fa-money datapole {{free}}"></i>
+                    </li>
+                </a>
+                <a data-toggle="tooltip" title data-original-title="{{onlineCaption}}">
+                    <li>
+                        <i class="fa fa-eye datapole {{online}}"></i>
                     </li>
                 </a>
                 <a data-toggle="tooltip" title data-original-title="{{machineCaption}}">
@@ -16,14 +36,14 @@
                         <i class="fa fa-keyboard-o datapole {{machine}}"></i>
                     </li>
                 </a>
-                <a data-toggle="tooltip" title data-original-title="{{contextCaption}}">
-                    <li>
-                        <i class="fa fa-cog datapole {{context}}"></i>
-                    </li>
-                </a>
                 <a data-toggle="tooltip" title data-original-title="{{bulkCaption}}">
                     <li>
                         <i class="fa fa-files-o datapole {{bulk}}"></i>
+                    </li>
+                </a>
+                <a data-toggle="tooltip" title data-original-title="{{openLicenseCaption}}">
+                    <li>
+                        <i class="fa fa-share-alt datapole {{openLicense}}"></i>
                     </li>
                 </a>
                 <a data-toggle="tooltip" title data-original-title="{{freshCaption}}">
@@ -31,46 +51,104 @@
                         <i class="fa fa-clock-o datapole {{fresh}}"></i>
                     </li>
                 </a>
-                <a data-toggle="tooltip" title data-original-title="{{incidentCaption}}">
+                <a data-toggle="tooltip" title data-original-title="{{inRepoCaption}}">
                     <li>
-                        <i class="fa fa-list datapole {{incident}}"></i>
+                        <i class="fa fa-archive datapole {{inRepo}}"></i>
+                     </li>
+                </a>
+                <a data-toggle="tooltip" title data-original-title="{{verifiableCaption}}">
+                    <li>
+                        <i class="fa fa-check-circle datapole {{verifiable}}"></i>
+                     </li>
+                </a>
+                <a data-toggle="tooltip" title data-original-title="{{completeCaption}}">
+                    <li>
+                        <i class="fa fa-circle-o datapole {{complete}}"></i>
                      </li>
                 </a>
             </ul>
         </div>
-        <p><b>Description: </b>{{Description}}</p>
-        <p><b>Content Available: </b>{{"Content Available"}}</p>
+        <p><b>Grade:</b> {{"Grade"}} ({{"Score"}}%)</p>
+        <p><b>Description:</b> {{"Description"}}</p>
         <div class="row">
             <div class="col-sm-4">
                 <div class="row">
                     <div class="col-xs-12">
-                        <p><b>Machine Readable: </b>{{"Data is machine readable"}}</p>
+                        <p><b>Exists:</b> {{"Exists"}}</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
-                        <p><b>Update Frequency: </b>{{"Update frequency"}}</p>
+                        <p><b>Digitized:</b> {{"Digitized"}}</p>
                     </div>
                 </div>
             </div>
             <div class="col-sm-4">
-                <p><b>Fields: </b>{{"Fields Included"}}</p>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p><b>Public:</b> {{"Public"}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p><b>Without cost:</b> {{"Free"}}</p>
+                    </div>
+                </div>
             </div>
             <div class="col-sm-4">
                 <div class="row">
                     <div class="col-xs-12">
-                        <p><b>Download Formats: </b>{{"Available downloads"}}</p>
+                        <p><b>Online:</b> {{"Online"}}</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
-                        <p><b>Data timeline: </b>{{"Data timeline"}}</p>
+                        <p><b>Machine-readable:</b> {{"Machine readable"}}</p>
                     </div>
                 </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p><b>Available in bulk:</b> {{"Available in bulk"}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p><b>No license restrictions:</b> {{"No restrictions"}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p><b>Up-to-date:</b> {{"Up-to-date"}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p><b>In the state repository:</b> {{"In the state repository"}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p><b>Verifiable:</b> {{"Verifiable"}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p><b>Complete:</b> {{"Complete"}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <p><b>Comments:</b> {{"Comments"}}</p>
             </div>
         </div>
-        <a href={{Link}}>{{Link}}</a>
+        <a href="{{"Link"}}">{{"Link"}}</a>
         </br>
-        <small>This summary last updated on: {{"Row last updated"}}</small>
+        <small>This summary last updated on: {{"Last updated"}}</small>
     </div>
 </div>

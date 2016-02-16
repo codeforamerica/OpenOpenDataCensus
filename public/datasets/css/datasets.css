@@ -1,10 +1,10 @@
-.department-title {
+.state-title {
     margin-top: 0px;
     margin-bottom: 0px;
     color: white;
 }
 
-.panel-default > .department-title-heading {
+.panel-default > .state-title-heading {
     background-color: navy;
 }
 .clickable {
