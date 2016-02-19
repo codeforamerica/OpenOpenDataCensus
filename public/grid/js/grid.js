@@ -26,7 +26,7 @@ var spinner = new Spinner(opts).spin(target);
  $(document).ready(function() {
 
      Tabletop.init({
-         key: "1OhVbryeHBsPjJ3TjjVFlfM552pDKRjiUpTAXQJe9miA",
+         key: //GOOGLE_SHEET_KEY, // Gulp will add the right key here
          callback: showInfo,
          parseNumbers: true
      });

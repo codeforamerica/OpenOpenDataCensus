@@ -15,6 +15,8 @@ var print = require('gulp-print');
 var underscore = require('underscore');
 var merge = require('merge-stream');
 var install = require("gulp-install");
+var env = require('gulp-env');
+var injectString = require('gulp-inject-string');
 
 var modules = ["datasets", "grid", "datatype", "methodology"];
 
@@ -56,10 +58,15 @@ gulp.task('buildDev', ['npm', 'bower', 'clean'], function() {
     gulp.src('./public/common/CNAME')
         .pipe(gulp.dest('out/'));
 
+    env.set({
+      GOOGLE_SHEET_KEY : '"1OhVbryeHBsPjJ3TjjVFlfM552pDKRjiUpTAXQJe9miA"'
+    });
+
     return merge(underscore.map(modules, function(module) {
         var target = gulp.src('./public/' + module + '/*.html');
 
         var customJs = gulp.src('./public/' + module + '/js/**.js')
+            .pipe(injectString.replace("//GOOGLE_SHEET_KEY", process.env.GOOGLE_SHEET_KEY))
             .pipe(gulp.dest('out/' + module + '/js'));
 
         var customCss = gulp.src('./public/' + module + '/css/**.css')
