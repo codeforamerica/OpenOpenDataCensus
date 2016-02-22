@@ -43,7 +43,7 @@ var spinner = new Spinner(opts).spin(target);
 
     spinner.stop();
 
-     var stateTemplate = Handlebars.compile($("#state-template").html());
+     var placeTemplate = Handlebars.compile($("#place-template").html());
 
      rawData = tabletop.sheets("Census Data").all()
      var allTypes = _.chain(rawData).map(function(row) {
@@ -56,13 +56,13 @@ var spinner = new Spinner(opts).spin(target);
      setupDatatypes(allTypes);
 
      var rows = _.chain(rawData)
-         .groupBy("State")
-         .map(function(datasets, state) {
+         .groupBy("place")
+         .map(function(datasets, place) {
              var row = {
-                 state: state,
-                 state: datasets[0]["State"],
-                 stateHref: URI().filename("datasets.html").search({
-                     "state": state
+                 place: place,
+                 place: datasets[0]["place"],
+                 placeHref: URI().filename("datasets.html").search({
+                     "place": place
                  }).toString(),
                  datasets: []
              }
@@ -82,13 +82,13 @@ var spinner = new Spinner(opts).spin(target);
                          bulk: foundDataset["Available in bulk"],
                          openLicense: foundDataset["No restrictions"],
                          fresh: foundDataset["Up-to-date"],
-                         inRepo: foundDataset["In the state repository"],
+                         inRepo: foundDataset["In the place repository"],
                          verifiable: foundDataset["Verifiable"],
                          complete: foundDataset["Complete"],
                          grade: foundDataset["Grade"],
                          score: foundDataset["Score"],
                          datasetHref: URI().filename("datasets.html").search({
-                             "state": row["state"],
+                             "place": row["place"],
                              "datatype": foundDataset["Type of Data"]
                          })
                      }
@@ -126,16 +126,16 @@ var spinner = new Spinner(opts).spin(target);
                          inRepo: "DNE",
                          verifiable: "DNE",
                          complete: "DNE",
-                         datasetHref: "https://github.com/opendata/Open-Data-Census/issues/new?title=Missing+Data:&amp;body=STATE%3A%20%0ADATASET%3A%20%0AURL%3A%20%0A%0ADESCRIPTION%2FCOMMENTS%3A%0A%0A%5BHere%20you%20might%20describe%20the%20quality%20of%20the%20data%2C%20rate%20it%20using%20the%20census%27%20metrics%2C%20suggest%20changes%20to%20an%20existing%20dataset%2C%20etc.%5D"
+                         datasetHref: "https://github.com/opendata/Open-Data-Census/issues/new?title=Missing+Data:&amp;body=place%3A%20%0ADATASET%3A%20%0AURL%3A%20%0A%0ADESCRIPTION%2FCOMMENTS%3A%0A%0A%5BHere%20you%20might%20describe%20the%20quality%20of%20the%20data%2C%20rate%20it%20using%20the%20census%27%20metrics%2C%20suggest%20changes%20to%20an%20existing%20dataset%2C%20etc.%5D"
                      });
                  }
              });
              return row;
          })
-         .sortBy("state")
+         .sortBy("place")
          .each(function(row) {
-             var html = stateTemplate(row);
-             $("#states").append(html);
+             var html = placeTemplate(row);
+             $("#places").append(html);
          })
 
      .value();
