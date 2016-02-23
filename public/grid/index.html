@@ -53,7 +53,7 @@
           <div class="table-responsive" id="grid">
             <table class="table">
               <thead id="datasets"></thead>
-              <tbody id="states"></tbody>
+              <tbody id="places"></tbody>
             </table>
           </div>
         </div>
@@ -72,7 +72,7 @@
     </div>
     <script id="place-template" type="text/x-handlebars-template">
       <tr>
-        <td> <a href="{{stateHref}}"> {{state}} </a> </td>
+        <td> <a href="{{placeHref}}"> {{place}} </a> </td>
         {{#each this.datasets}}
         <td class="grade grade-{{grade}}">
           <a href="{{datasetHref}}">
@@ -84,7 +84,7 @@
     </script>
     <script id="dataset-template" type="text/x-handlebars-template">
       <tr>
-        <th>State</th>
+        <th>Place</th>
         {{#each this}}
         <th><span><a href="{{datatypeHref}}">{{datatype}}</a></span></th>
         {{/each}} </tr>

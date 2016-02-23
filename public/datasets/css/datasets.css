@@ -1,10 +1,10 @@
-.state-title {
+.place-title {
     margin-top: 0px;
     margin-bottom: 0px;
     color: white;
 }
 
-.panel-default > .state-title-heading {
+.panel-default > .place-title-heading {
     background-color: navy;
 }
 .clickable {

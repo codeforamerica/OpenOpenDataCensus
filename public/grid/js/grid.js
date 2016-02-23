@@ -56,11 +56,11 @@ var spinner = new Spinner(opts).spin(target);
      setupDatatypes(allTypes);
 
      var rows = _.chain(rawData)
-         .groupBy("place")
+         .groupBy("Place")
          .map(function(datasets, place) {
              var row = {
                  place: place,
-                 place: datasets[0]["place"],
+                 place: datasets[0]["Place"],
                  placeHref: URI().filename("datasets.html").search({
                      "place": place
                  }).toString(),
