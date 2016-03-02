@@ -37,14 +37,14 @@ var spinner = new Spinner(opts).spin(target);
 
  function showInfo(data, tabletop) {
 
-     allRows = _.sortBy(tabletop.sheets("Census Data").all(), "State");
+     allRows = _.sortBy(tabletop.sheets("Census Data").all(), "Place");
 
      var uri = new URI();
      var params = uri.search(true);
 
      if (params) {
          var filters = [];
-         filters.push(buildStateFilter(params["state"]));
+         filters.push(buildPlaceFilter(params["place"]));
          filters.push(buildDatatypeFilter(params["datatype"]));
          updateCards(allRows, _.compact(filters));
      } else {
@@ -105,12 +105,12 @@ var spinner = new Spinner(opts).spin(target);
 
 
 
- function buildStateFilter(state) {
-     if (!state) {
+ function buildPlaceFilter(place) {
+     if (!place) {
          return false;
      }
      return function(row) {
-         return row["State"] === state;
+         return row["Place"] === place;
      }
  }
 
@@ -127,9 +127,9 @@ var spinner = new Spinner(opts).spin(target);
      $("#cards").empty();
  }
 
- function filterByState(state) {
+ function filterByPlace(place) {
      clearCards();
-     updateCards(allRows, [buildStateFilter(state)]);
+     updateCards(allRows, [buildPlaceFilter(place)]);
  }
 
  function resetSearch() {
