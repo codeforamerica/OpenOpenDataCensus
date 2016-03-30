@@ -17,3 +17,5 @@ gulp readme
 ```
 
 [A model Google Sheet is available](https://docs.google.com/spreadsheets/d/1OhVbryeHBsPjJ3TjjVFlfM552pDKRjiUpTAXQJe9miA/). Duplicate it into your own Google Docs account to serve as your data store.
+
+Before deploying to GitHub Pages, customize your domain name in `public/common/CNAME`, or delete the file to serve your site from a `[yourname].github.io` address.
